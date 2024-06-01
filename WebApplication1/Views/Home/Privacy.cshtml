@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+
+}
+@section SideBar {
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Login</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Logout</a>
+    </li>
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Use this page to detail your site's privacy policy.</p>
+@{
+    ViewBag.ListTitle = "Hello 2";
+    ViewBag.Items = new List<string> { "Nguyen Van A", "Nguyen Van C" };
+    Html.RenderPartial("ListParView");
+}

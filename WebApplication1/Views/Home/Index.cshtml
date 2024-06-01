@@ -1,0 +1,42 @@
+﻿@model List<Product>
+@{
+    ViewData["Title"] = "Home Pagexx";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WebApplication1</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/WebApplication1.styles.css" asp-append-version="true" />
+</head>
+@section SideBar{
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Admin</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Managment</a>
+    </li>
+}
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Nguyen Duong The Vi - 12/10/20023</a>.</p>
+    
+</div>
+<table class="table">
+    <tbody>
+        @foreach (var item in @Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>
+@{
+    ViewBag.ListTitle = "Hello";
+    ViewBag.Items = new List<string> { "Lapr", "fhfgh" };
+    Html.RenderPartial("ListParView");
+}
