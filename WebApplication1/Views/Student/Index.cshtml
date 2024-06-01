@@ -1,0 +1,37 @@
+﻿@model Student;
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section SideBar {
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Admin</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Managment</a>
+    </li>
+}
+@if(Model == null){
+<div>Create new Student</div>
+<form action="/Student/" method="Post">
+    <div class="mb-3">
+        <input type="text" class="form-control" id="Id" name="id" placeholder="Nhat Id" />
+
+    </div>
+    <div class="mb-3">
+        <input type="text" class="form-control" id="Name" name="Name" placeholder="Nhat Name" />
+
+    </div>
+    <div class="mb-3">
+        <input type="text" class="form-control" id="Price" name="Price" placeholder="Nhat Price" />
+
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+}else{
+@*     <div>Đã thêm sản phầm thành công</div>
+    <ul>
+        <li>ID: @Model.Id</li>
+    <li>Name: @Model.Name</li>
+    <li>Price: @Model.Price</li>
+    </ul> *@
+}

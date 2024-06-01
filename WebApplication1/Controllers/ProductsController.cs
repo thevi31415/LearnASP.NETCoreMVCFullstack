@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
@@ -30,6 +31,22 @@ namespace WebApplication1.Controllers
             }
             ViewBag.ProName = NameP;
             return View();
+        }
+        public IActionResult Create()
+        {
+            Console.WriteLine("Add");
+
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Create(Product pro)
+        {
+            Console.WriteLine("Addtry");
+
+            Console.WriteLine(pro.Id);
+            Console.WriteLine(pro.Name);
+            Console.WriteLine(pro.Price);
+            return View(pro);
         }
 
     }
